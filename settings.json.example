@@ -1,0 +1,16 @@
+{
+  "GROQ_API_KEY": "<replace-with-your-api-key>",
+  "model": "llama-3.3-70b-versatile",
+  "temperature": 0.7,
+  "top_p": 0.95,
+  "reasoning_effort": "medium",
+  "mcpServers": {},
+  "disabledMcpServers": [],
+  "customSystemPrompt": "",
+  "popupEnabled": true,
+  "customCompletionUrl": "",
+  "toolOutputLimit": 8000,
+  "customApiBaseUrl": "",
+  "customApiBaseUrlEnabled": false,
+  "customModels": {}
+}

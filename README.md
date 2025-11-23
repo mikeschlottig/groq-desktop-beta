@@ -136,4 +136,35 @@ In the settings page, add your Groq API key:
 }
 ```
 
-You can obtain a Groq API key by signing up at [https://console.groq.com](https://console.groq.com). 
+You can obtain a Groq API key by signing up at [https://console.groq.com](https://console.groq.com).
+
+## Security Considerations
+
+### API Key Storage
+
+Your Groq API key is stored in a `settings.json` file in your application data directory:
+- **macOS**: `~/Library/Application Support/Groq Desktop/settings.json`
+- **Windows**: `%APPDATA%\Groq Desktop\settings.json`
+- **Linux**: `~/.config/Groq Desktop/settings.json`
+
+**Important Security Notes:**
+
+1. **Do not share your settings.json file** - It contains your API key in plain text
+2. **Use environment variables for enhanced security** - Set `GROQ_API_KEY` as an environment variable instead of storing it in settings.json. Environment variables take precedence over the settings file.
+3. **Back up carefully** - If backing up your configuration, be aware that settings.json contains sensitive credentials
+4. **Rotate keys if exposed** - If you accidentally share your settings.json or suspect your API key is compromised, regenerate it immediately at [https://console.groq.com/keys](https://console.groq.com/keys)
+
+### Recommended: Use Environment Variables
+
+For better security, set your API key as an environment variable:
+
+```bash
+# macOS/Linux - add to ~/.bashrc, ~/.zshrc, or equivalent
+export GROQ_API_KEY="your-api-key-here"
+
+# Windows - use System Properties > Environment Variables
+# Or in PowerShell:
+$env:GROQ_API_KEY = "your-api-key-here"
+```
+
+You can also copy `env.example` to `.env` in the project directory during development.

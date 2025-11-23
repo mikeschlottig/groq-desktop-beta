@@ -4,6 +4,13 @@ const path = require('path');
 // Load environment variables from .env file
 require('dotenv').config();
 
+// SECURITY NOTE: API keys are stored in plain text in settings.json
+// For enhanced security, users should:
+// 1. Use environment variables (GROQ_API_KEY) instead of settings.json
+// 2. Never share their settings.json file
+// 3. Be cautious when backing up application data
+// TODO: Consider implementing electron's safeStorage or keytar for secure credential storage
+
 let appInstance; // To store app instance for userData path
 
 // Helper function to load settings with defaults and validation

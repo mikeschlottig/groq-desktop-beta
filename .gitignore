@@ -33,3 +33,8 @@ pnpm-debug.log*
 .vscode/
 *.swp
 *.swo
+
+# Settings file (contains sensitive API keys)
+# Note: The actual settings.json is stored in the user's app data folder,
+# but this entry prevents accidental commits of local test copies
+settings.json
